@@ -8,11 +8,14 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPageObject {
     private WebDriver driver;
 
-    @FindBy(name = "q")
-    private WebElement searchField;
+    @FindBy(id = "loginForm:nameInputField")
+    private WebElement nameInputField;
 
-    @FindBy(name = "btnG")
-    private WebElement searchButton;
+    @FindBy(id = "loginForm:passwordInputField")
+    private WebElement passwordInputField;
+
+    @FindBy(id = "loginForm:loginButton")
+    private WebElement loginButton;
 
     public LoginPageObject(WebDriver driver) {
         this.driver = driver;
@@ -30,16 +33,21 @@ public class LoginPageObject {
         return driver.getTitle();
     }
 
-    public void searchFor(String searchTerm) {
-        searchField.sendKeys(searchTerm);
-        searchButton.click();
+    public void login(String name, String password) {
+        nameInputField.sendKeys(name);
+        passwordInputField.sendKeys(password);
+        loginButton.click();
     }
 
-    public void typeSearchTerm(String searchTerm) {
-        searchField.sendKeys(searchTerm);
+    public void typeName(String name) {
+        nameInputField.sendKeys(name);
     }
 
-    public void clickOnSearch() {
-        searchButton.click();
+    public void typePassword(String password) {
+        passwordInputField.sendKeys(password);
+    }
+
+    public void clickLoginButton() {
+        loginButton.click();
     }
 }

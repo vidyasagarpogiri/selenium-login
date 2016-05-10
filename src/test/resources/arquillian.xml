@@ -1,0 +1,12 @@
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian
+    http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+    <extension qualifier="webdriver">
+    </extension>
+    <extension qualifier="graphene">
+        <property name="waitModelInterval">15</property>
+        <property name="waitGuiInterval">180</property>
+        <property name="waitAjaxInterval">8</property>
+    </extension>
+</arquillian>
