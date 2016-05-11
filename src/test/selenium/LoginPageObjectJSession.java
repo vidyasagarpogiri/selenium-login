@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by VGE on 10.05.2016.
  */
-public class LoginPageObject {
+class LoginPageObjectJSession {
     private WebDriver driver;
 
-    @FindBy(id = "loginForm:nameInputField")
+    @FindBy(id = "loginForm:j_idt6")
     private WebElement nameInputField;
 
     @FindBy(id = "loginForm:passwordInputField")
@@ -17,15 +17,15 @@ public class LoginPageObject {
     @FindBy(id = "loginForm:loginButton")
     private WebElement loginButton;
 
-    public LoginPageObject(WebDriver driver) {
+    public LoginPageObjectJSession(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void open(String url) {
+    void open(String url) {
         driver.get(url);
     }
 
-    public void close() {
+    void close() {
         driver.quit();
     }
 
@@ -33,7 +33,7 @@ public class LoginPageObject {
         return driver.getTitle();
     }
 
-    public void login(String name, String password) {
+    void login(String name, String password) {
         nameInputField.sendKeys(name);
         passwordInputField.sendKeys(password);
         loginButton.click();

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Please Login</title>
+</h:head>
+<body>
+<h:form id="loginForm">
+    <h:panelGrid id="grid" columns="2">
+        <h:outputText id="nameLabel" value="Loginname"/>
+        <p:inputText id="nameInputField" value="#{loginBean.name}"
+                     required="true"/>
+        <h:outputText id="passwordLabel" value="Password"/>
+        <p:inputText id="passwordInputField" value="#{loginBean.password}"
+                     required="true"/>
+        <p:commandButton id="loginButton" value="Login" delay="8000"
+                         action="#{loginBean.send}"/>
+    </h:panelGrid>
+</h:form>
+</body>
+</html>
